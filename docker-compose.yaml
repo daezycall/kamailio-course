@@ -12,7 +12,7 @@ services:
     environment:
       - TERM=xterm
     cap_add:
-      - NET_ADMIN
+      - ALL
 
   kamailio-edge:
     image: kamailio/kamailio-ci:5.4-alpine.debug
@@ -20,7 +20,7 @@ services:
     ports:
       - "5090:5060"
     volumes:
-      - ./kamailio-default/:/etc/kamailio
+      - ./kamailio-default/:/etc/kamailio:Z
     environment:
       - KAM_SHM_MEM_SIZE=256
     networks:
