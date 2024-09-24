@@ -20,7 +20,7 @@ services:
     ports:
       - "5090:5060"
     volumes:
-      - ./kamailio-default/:/etc/kamailio
+      - ./kamailio-default/:/etc/kamailio:Z
     environment:
       - KAM_SHM_MEM_SIZE=256
       - COREIP=172.16.254.2
@@ -47,7 +47,7 @@ services:
     ports:
       - "23000-23100:23000-23100"
     volumes:
-      - ./rtpengine-edge/config:/etc/rtpengine
+      - ./rtpengine-edge/config:/etc/rtpengine:Z
     networks:
       external:
         ipv4_address: 192.168.254.3
@@ -105,7 +105,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql:Z
     networks:
       internal:
         ipv4_address: 172.16.254.10
