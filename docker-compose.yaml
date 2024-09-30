@@ -60,7 +60,7 @@ services:
     container_name: b2bua_internal_01 
     stdin_open: true
     image: andrius/pjsua:latest
-    command: pjsua --null-audio --no-tcp --auto-answer=404 --outbound sip:172.16.254.2;lr
+    command: pjsua --null-audio --no-tcp --auto-answer=404 --outbound sip:172.16.254.2;lr --add-buddy=sip:555@192.168.254.100 --add-buddy=sip:999@192.168.254.100
     ports:
       - "5091:5060"
     networks:
@@ -72,7 +72,7 @@ services:
     container_name: b2bua_internal_02 
     stdin_open: true
     image: andrius/pjsua:latest
-    command: pjsua --null-audio --no-tcp --auto-answer=200 --outbound sip:172.16.254.2;lr
+    command: pjsua --null-audio --no-tcp --auto-answer=200 --outbound sip:172.16.254.2;lr --add-buddy=sip:555@192.168.254.100 --add-buddy=sip:999@192.168.254.100
     ports:
       - "5092:5060"
     networks:
@@ -93,6 +93,19 @@ services:
     networks:
       external:
         ipv4_address: 192.168.254.100
+
+  b2bua_external_02:
+    tty: true
+    container_name: b2bua_external_02
+    stdin_open: true
+    image: andrius/pjsua:latest 
+    command: pjsua --null-audio --no-tcp --auto-answer=200  --id=sip:b2bua_external_02@czdv-dev220-easycall.mbae-it.com  --outbound sip:192.168.254.2;lr --add-buddy=sip:123@172.16.254.101 --add-buddy=sip:456@172.16.254.100
+    #command: "tail -f /dev/null"
+    ports:
+      - "5094:5060"
+    networks:
+      external:
+        ipv4_address: 192.168.254.101
 
   db:
     image: mysql:5.7
