@@ -1,0 +1,149 @@
+with ALL
+
+INVITE sip:123@172.16.254.101 SIP/2.0
+Record-Route: <sip:172.16.254.2;r2=on;lr;did=6bc.e85>
+Record-Route: <sip:192.168.254.2;line=sr-8iqQY3p1Ckxle3XOC3wbj3fZ83fBtixZtUfZv2qD7SvkNd1qYRw*>
+Via: SIP/2.0/UDP 172.16.254.2;branch=z9hG4bK8a7a.da7f600dd6fa3c11e9233295080a0f76.0
+Via: SIP/2.0/UDP 192.168.254.2;branch=z9hG4bKsr-wbqWjVfOChB-Er5XCSDdj3piYhxdeSWOCS5lY3wQe35Z8G-3vTqivTWBCSDdj3piYhxdeSWOCS5lY6Ef7TEzF3Ad82BdFRb6CRNQYiMdNT13IR6oYTPUe2Mjw2z-eceeIrMqY9-Rj--WWTlmT3-wnRvmNbFwYSWVv9eYnX**
+Max-Forwards: 69
+From: sip:b2bua_external_02@czdv-dev220-easycall.mbae-it.com;tag=pkJlyHOHwcCkhHZjSJUdkhuj8q4aJ-kK
+To: sip:123@172.16.254.101
+Contact: <sip:192.168.254.2;line=sr-8iqQYGfdNH-P9i-xF2-dtGr.9V5dWRp1Ckxle3XOC3wbj3pQCSL6CRNQYiBk>
+Call-ID: g7KnRxh7Geyob5NkDV6dVRUqnJNKy4Mk
+CSeq: 15828 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: PJSUA v2.8 Linux-5.14.1.171/x86_64
+Content-Type: application/sdp
+Content-Length:   496
+
+v=0
+o=- 3936694278 3936694278 IN IP4 172.16.254.3
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 17342 RTP/AVP 98 97 99 104 3 0 8 9 96
+c=IN IP4 172.16.254.3
+b=TIAS:64000
+a=rtpmap:98 speex/16000
+a=rtpmap:97 speex/8000
+a=rtpmap:99 speex/32000
+a=rtpmap:104 iLBC/8000
+a=fmtp:104 mode=30
+a=rtpmap:3 GSM/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:9 G722/8000
+a=rtpmap:96 telephone-event/8000
+a=fmtp:96 0-16
+a=ssrc:298491345 cname:0b6ca7d76517771b
+a=sendrecv
+a=rtcp:17343
+
+
+
+without TOPOH
+
+INVITE sip:123@172.16.254.101 SIP/2.0
+Record-Route: <sip:172.16.254.2;r2=on;lr;did=e2c.7002>
+Record-Route: <sip:192.168.254.2;r2=on;lr;did=e2c.7002>
+Via: SIP/2.0/UDP 172.16.254.2;branch=z9hG4bK9fcc.0082803091f8b721970c244a85840271.0
+Via: SIP/2.0/UDP 192.168.254.101:5060;received=192.168.254.101;rport=5060;branch=z9hG4bKPjbT25p8hn7nDbizq-xa193v0JqmttANF3
+Max-Forwards: 69
+From: sip:b2bua_external_02@czdv-dev220-easycall.mbae-it.com;tag=zEi3rrmD-mgcWf6F3PPRWN5ZbeSX5cWt
+To: sip:123@172.16.254.101
+Contact: <sip:b2bua_external_02@192.168.254.101:5060;ob>
+Call-ID: 5DUVpBtU27ErfG1How6Lm9ovn76fsfs5
+CSeq: 15110 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: PJSUA v2.8 Linux-5.14.1.171/x86_64
+Content-Type: application/sdp
+Content-Length:   496
+
+v=0
+o=- 3936694278 3936694278 IN IP4 172.16.254.3
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 17342 RTP/AVP 98 97 99 104 3 0 8 9 96
+c=IN IP4 172.16.254.3
+b=TIAS:64000
+a=rtpmap:98 speex/16000
+a=rtpmap:97 speex/8000
+a=rtpmap:99 speex/32000
+a=rtpmap:104 iLBC/8000
+a=fmtp:104 mode=30
+a=rtpmap:3 GSM/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:9 G722/8000
+a=rtpmap:96 telephone-event/8000
+a=fmtp:96 0-16
+a=ssrc:298491345 cname:0b6ca7d76517771b
+a=sendrecv
+a=rtcp:17343
+
+
+without TOPOS
+
+INVITE sip:123@172.16.254.101 SIP/2.0
+Record-Route: <sip:172.16.254.2;r2=on;lr;did=3b6.c7e2>
+Record-Route: <sip:192.168.254.2;line=sr-8iqQY3p1Ckxle3XOC3wbj3fZ83fBtixZtUfZv2qD7Sekek13eiwd>
+Via: SIP/2.0/UDP 172.16.254.2;branch=z9hG4bK40b6.1643f79e569bd5ab321ad08aaaf8604e.0
+Via: SIP/2.0/UDP 192.168.254.2;branch=z9hG4bKsr-wbqWjVfOChB-Er5XCSDdj3piYhxdeSWOCS5lY3wQe35Z8G-3vTqivTWBCSDdj3piYhxdeSWOCS5lY6Ef7TEzF3Ad82BdFRb6CRNQYiMdNT13IR6oYTPUe2Mjw2z2v-zlvHvlWw.1t9er0pFgEwMetHamn266t-a7jqasn5**
+Max-Forwards: 69
+From: sip:b2bua_external_02@czdv-dev220-easycall.mbae-it.com;tag=fp0Zg5o3bJe1eYaqqwkGzh-yYtp0igYT
+To: sip:123@172.16.254.101
+Contact: <sip:192.168.254.2;line=sr-8iqQYGfdNH-P9i-xF2-dtGr.9V5dWRp1Ckxle3XOC3wbj3pQCSL6CRNQYiBk>
+Call-ID: FJQmVvKvdslbjAj8Lt0sW-EYITqKyKb.
+CSeq: 28771 INVITE
+Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+Supported: replaces, 100rel, timer, norefersub
+Session-Expires: 1800
+Min-SE: 90
+User-Agent: PJSUA v2.8 Linux-5.14.1.171/x86_64
+Content-Type: application/sdp
+Content-Length:   496
+
+v=0
+o=- 3936694869 3936694869 IN IP4 172.16.254.3
+s=pjmedia
+b=AS:84
+t=0 0
+a=X-nat:0
+m=audio 17300 RTP/AVP 98 97 99 104 3 0 8 9 96
+c=IN IP4 172.16.254.3
+b=TIAS:64000
+a=rtpmap:98 speex/16000
+a=rtpmap:97 speex/8000
+a=rtpmap:99 speex/32000
+a=rtpmap:104 iLBC/8000
+a=fmtp:104 mode=30
+a=rtpmap:3 GSM/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:9 G722/8000
+a=rtpmap:96 telephone-event/8000
+a=fmtp:96 0-16
+a=ssrc:545640270 cname:349d78cc132556a1
+a=sendrecv
+a=rtcp:17301
+
+
+
+
+Notes:
+ - without TOPOS i can see external IP 192.168.254.101 on VIA and CONTACTS
+
+ Via: SIP/2.0/UDP 192.168.254.2;branch=z9hG4bKsr-wbqWjVfOChB-Er5XCSDdj3piYhxdeSWOCS5lY3wQe35Z8G-3vTqivTWBCSDdj3piYhxdeSWOCS5lY6Ef7TEzF3Ad82BdFRb6CRNQYiMdNT13IR6oYTPUe2Mjw2z-eceeIrMqY9-Rj--WWTlmT3-wnRvmNbFwYSWVv9eYnX**
+ Via: SIP/2.0/UDP 192.168.254.101:5060;received=192.168.254.101;rport=5060;branch=z9hG4bKPjbT25p8hn7nDbizq-xa193v0JqmttANF3
+
+ Contact: <sip:192.168.254.2;line=sr-8iqQYGfdNH-P9i-xF2-dtGr.9V5dWRp1Ckxle3XOC3wbj3pQCSL6CRNQYiBk>
+ Contact: <sip:b2bua_external_02@192.168.254.101:5060;ob>
