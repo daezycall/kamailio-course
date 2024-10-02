@@ -20,7 +20,7 @@ services:
     ports:
       - "5090:5060"
     volumes:
-      - ./kamailio-default/:/etc/kamailio
+      - ./kamailio-default/:/etc/kamailio:Z
     environment:
       - KAM_SHM_MEM_SIZE=256
       - COREIP=172.16.254.2
@@ -32,11 +32,11 @@ services:
       - DBPASSWORD=kamailiorw
       - DBHOST=172.16.254.10
       - DBNAME=kamailio
-    depends_on:
-      rtpengine-edge:
-        condition: service_started
-      db:
-        condition: service_started
+    #depends_on:
+    #  rtpengine-edge:
+    #    condition: service_started
+    #  db:
+    #    condition: service_started
 
     networks:
       external:
@@ -52,7 +52,7 @@ services:
     ports:
       - "23000-23100:23000-23100"
     volumes:
-      - ./rtpengine-edge/config:/etc/rtpengine
+      - ./rtpengine-edge/config:/etc/rtpengine:Z
     networks:
       external:
         ipv4_address: 192.168.254.3
@@ -65,7 +65,7 @@ services:
     container_name: b2bua_internal_01 
     stdin_open: true
     volumes:
-      - ./b2bua/b2bua_internal_01/:/config
+      - ./b2bua/b2bua_internal_01/:/config:Z
     command: pjsua --config-file=/config/pjsua.cfg
     image: andrius/pjsua:latest
     ports:
@@ -73,9 +73,9 @@ services:
     networks:
       internal:
         ipv4_address: 172.16.254.100
-    depends_on:
-      kamailio-edge:
-        condition: service_started
+    #depends_on:
+    #  kamailio-edge:
+    #    condition: service_started
 
   b2bua_internal_02:
     tty: true
@@ -88,16 +88,16 @@ services:
     networks:
       internal:
         ipv4_address: 172.16.254.101
-    depends_on:
-      kamailio-edge:
-        condition: service_started
+    #depends_on:
+    #  kamailio-edge:
+    #    condition: service_started
 
   b2bua_external_01:
     tty: true
     container_name: b2bua_external_01
     stdin_open: true
     volumes:
-      - ./b2bua/b2bua_external_01/:/config
+      - ./b2bua/b2bua_external_01/:/config:Z
     image: andrius/pjsua:latest
     command: pjsua --config-file=/config/pjsua.cfg
     #command: "tail -f /dev/null"
@@ -106,9 +106,9 @@ services:
     networks:
       external:
         ipv4_address: 192.168.254.100
-    depends_on:
-      kamailio-edge:
-        condition: service_started
+    #depends_on:
+    #  kamailio-edge:
+    #    condition: service_started
 
   db:
     image: mysql:5.7
@@ -124,7 +124,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql:Z
     networks:
       internal:
         ipv4_address: 172.16.254.10
