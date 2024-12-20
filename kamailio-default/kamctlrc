@@ -18,7 +18,7 @@
 DBENGINE=MYSQL
 
 ## database host
-DBHOST=172.16.254.10
+DBHOST=kamailiodb-0.kamailiodb.easycall.svc
 
 ## database port
 DBPORT=3306
@@ -33,16 +33,17 @@ DBNAME=kamailio
 DBRWUSER="kamailio"
 
 ## password for database read/write user
-DBRWPW="kamailiorw"
+DBRWPW="kamail12-413Hhio"
 
 ## database read only user
-DBROUSER="kamailioro"
+DBROUSER="kamailio-r"
 
 ## password for database read only user
-DBROPW="kamailioro"
+DBROPW="kamail12-413Hhio"
 
 ## database access host (from where is kamctl used)
-DBACCESSHOST=172.16.254.2
+#DBACCESSHOST=czpv-dev224-easycall.mbae-it.com
+DBACCESSHOST=10.111.160.70
 
 ## database super user (for ORACLE this is 'scheme-creator' user)
 DBROOTUSER="root"
@@ -56,7 +57,7 @@ DBROOTPW="rw_password"
 # DBINITASK=yes
 
 ## database character set (used by MySQL when creating database)
-#CHARSET="latin1"
+CHARSET="latin1"
 
 ## user name column
 # USERCOL="username"
@@ -116,6 +117,7 @@ DBROOTPW="rw_password"
 ## If you use the postgres database and want to change the installed tables, then you
 ## must also adjust the STANDARD_TABLES or EXTRA_TABLES variable accordingly in the
 ## kamdbctl.base script.
+
 
 ## Kamailio standard modules
 # STANDARD_MODULES="standard acc lcr domain group permissions registrar usrloc msilo

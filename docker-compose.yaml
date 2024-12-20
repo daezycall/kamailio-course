@@ -21,6 +21,10 @@ services:
       - "5090:5060"
     volumes:
       - ./kamailio-default/:/etc/kamailio:Z
+
+    entrypoint: tail
+    command: "-f /dev/null"
+    
     environment:
       - KAM_SHM_MEM_SIZE=256
       - COREIP=172.16.254.2
@@ -96,7 +100,7 @@ services:
     restart: always
     container_name: db01
     environment:
-      MYSQL_DATABASE: 'kamailio'
+      #MYSQL_DATABASE: 'kamailio'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'ro_password'
       MYSQL_ROOT_PASSWORD: 'rw_password'
